@@ -1,6 +1,8 @@
 import GameOverView from "../../components/gameOverView"
 import { useRouter } from "next/router"
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"
+import Link from 'next/link'
+
 const CircleGraphSection = dynamic(() => import("../../components/circleGraphSection"), { ssr: false });
 
 const resultData = {myself: "メコ", opponent: "メ", opponentName: "剣士山剣士郎"}
@@ -29,7 +31,7 @@ const Game =()=>{
         }
     ]
     
-    const router = useRouter();
+    const router = useRouter()
     const path = router.asPath
     const slicePosition = path.indexOf('/', path.indexOf('/') + 1)
     const userName = path.substring( 1, slicePosition )
@@ -37,7 +39,9 @@ const Game =()=>{
     return (
         <div className="game">
             <div className="game-overview-section" >
-                <GameOverView userName={userName} mySelf={resultData.myself} opponentName={resultData.opponentName} opponent={resultData.opponent}/>
+                <div className="game-overview-section-container">
+                    <GameOverView userName={userName} mySelf={resultData.myself} opponentName={resultData.opponentName} opponent={resultData.opponent}/>
+                </div>
             </div>
             <div className="circle-graph-section">
                 <CircleGraphSection title="打った技の構成" data={graphData}/>

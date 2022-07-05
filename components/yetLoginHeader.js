@@ -1,12 +1,15 @@
+import Link from 'next/link'
+import { useRouter } from "next/router"
+
 const YetLoginHeader =()=> {
     return (
         <div className="header">
             <div className="header-inner">
                 <div className="header-left">
-                    <a>KSB</a>
+                <Link href="/">KSB</Link>
                 </div>
                 <div className="header-right">
-                    <a>無料会員登録</a>
+                    <Link href="/"><a className="header-btn">無料会員登録</a></Link>
                 </div>
             </div>
         </div>

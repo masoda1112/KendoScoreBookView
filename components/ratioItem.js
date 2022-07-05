@@ -5,9 +5,9 @@ const RatioItem =(props)=>{
     (props.unit=="%") ? answer = Math.floor((props.childCount/props.parentCount)*10000)/100 : answer = Math.floor((props.childCount/props.parentCount)*100)/100
 
     return (
-        <div>
-            <h3>{props.title}</h3>
-            <p>{props.childCount} / {props.parentCount} （{answer}{props.unit}）</p>
+        <div className="ratio-item">
+            <h3 className="ratio-title">{props.title}</h3>
+            <p className="ratio-value">{props.childCount} / {props.parentCount} <span className="ratio-unit">（{answer}{props.unit}）</span></p>
         </div>
     )
 }

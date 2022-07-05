@@ -1,0 +1,42 @@
+.home{
+}
+.home .top-section{
+    height: calc(100vh - 60px);
+    padding-top: 60px;
+    background-color:#efefef;
+}
+
+.home .top-section-container{
+    width: 90%;
+    margin: auto;
+}
+
+.ratio-item{
+    margin-bottom: 80px;
+}
+.ratio-title{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.ratio-value{
+    font-size: 50px;
+    margin: 0px;
+}
+
+.ratio-unit{
+    font-size: 16px;
+}
+
+.pie-chart-item{
+    height: 50vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.pie-chart-title{
+    margin-bottom: 60px;
+    font-size: 16px;
+}

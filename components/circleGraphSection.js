@@ -14,8 +14,8 @@ const label = ({ name, value, cx, x, y }) => {
 const CircleGraphSection = ( props ) =>{
     return (
         <div className='pie-chart-item'>
-            <h2>{props.title}</h2>
-            <PieChart width={350} height={250}>
+            <h2 className='pie-chart-title'>{props.title}</h2>
+            <PieChart width={320} height={250}>
                 <Pie data={props.data} dataKey="value" nameKey="name" cx="50%" cy="50%" fill="#8884d8" label={label}/>
             </PieChart>
         </div>

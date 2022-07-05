@@ -1,0 +1,46 @@
+.addgame{
+    background-color: whitesmoke;
+    min-height: calc(100vh - 60px);
+    padding-top: 50px;
+}
+
+input, select{
+    width: 70%;
+}
+
+.addgame-container{
+    width: 90%;
+    margin: auto;
+}
+
+.input-form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.valid-attack-component,.attack-component{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 5px 10px 10px 20px;
+}
+
+.close-btn{
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.valid-attack-wrapper{
+    margin: 50px 0px;
+}
+
+.attack-wrapper{
+    margin-bottom: 50px;
+}
+
+.remove{
+    display: none;
+}

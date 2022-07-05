@@ -16,9 +16,10 @@ a {
 }
 
 main{
-  width: 90%;
+  /* width: 90%; */
   margin: auto;
   margin-top: 60px;
+   background-color: #f5f5f5;
 }
 .header{
   height: 60px;
@@ -28,6 +29,7 @@ main{
   color:#576871;
   position:fixed;
   top: 0;
+  z-index: 1;
 }
 
 .header-inner{
@@ -37,4 +39,30 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-right-first{
+  margin-right: 20px;
+}
+
+.header-btn{
+  background-color: #1976d2;
+  padding: 10px;
+  border-radius: 10px;
+  color:rgba(255, 255, 255, 1);
+}
+
+.footer{
+  height: 100px;
+  padding-top: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.footer-inner{
+  width: 90%;
+  margin: auto;
+}
+
+.addgame{
+  padding-bottom: 30px;
 }

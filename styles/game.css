@@ -1,0 +1,29 @@
+.game-overview-section{
+    background-color: #efefef;
+
+}
+
+.game-overview-result{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.game-overview-section-container{
+    width: 90%;
+    margin: auto;
+}
+
+.game-overview-name{
+    margin: 0;
+}
+
+.game-overview-attack{
+    font-size: 40px;
+    margin: 0;
+}
+
+.game-overview-vsmark{
+    font-size: 30px;
+}
