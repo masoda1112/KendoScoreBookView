@@ -4,23 +4,29 @@
     padding-top: 50px;
 }
 
-input, select{
+/* input, select{
     width: 70%;
-}
+    max-width: 200px;
+} */
 
 .addgame-container{
     width: 90%;
     margin: auto;
 }
+.modal-list-title{
+    font-size: 30px;
+    margin-bottom: 80px;
+}
 
 .input-form{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
     border-radius: 10px;
 }
 
-.valid-attack-component,.attack-component{
+.valid-attack-component,.attack-component, .foul-component, .action-component, .game-overview-wrapper{
     background-color: white;
     border-radius: 10px;
     margin-top: 30px;
@@ -43,4 +49,17 @@ input, select{
 
 .remove{
     display: none;
+}
+
+.add-modal-btn{
+    color: #576871;
+}
+/* .input-form-time{
+    width: 200px;
+} */
+
+
+.selected-skill{
+    text-align: center;
+    font-size: 20px;
 }

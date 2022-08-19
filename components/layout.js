@@ -1,10 +1,10 @@
 import Header from "./header"
-import YetLoginHeader from "./yetLoginHeader";
+import YetLoginHeader from "./yetLoginHeader"
 import Footer from "./footer"
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 const Layout =({children})=> {
-    const router = useRouter();
+    const router = useRouter()
     const path = router.pathname
     return (
         <>

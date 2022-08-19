@@ -1,12 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from "next/router"
+import React, { useState, useContext } from 'react'
+import { getUserName } from '../public/constants'
 
 const Header =()=> {
-    const router = useRouter()
-    const path = router.asPath
-    const slicePosition = path.indexOf('/', path.indexOf('/') + 1)
-    var userName = ""
-    if(slicePosition != -1){ userName = path.substring( 1,  slicePosition)} else {userName = path.substring(1)}
+    const userName = getUserName()
     return (
         <div className="header">
             <div className="header-inner">

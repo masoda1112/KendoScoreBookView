@@ -29,7 +29,7 @@ main{
   color:#576871;
   position:fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
 .header-inner{
@@ -65,4 +65,8 @@ main{
 
 .addgame{
   padding-bottom: 30px;
+}
+
+/* CircleGraph */
+tspan{
 }

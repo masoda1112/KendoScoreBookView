@@ -22,6 +22,7 @@
     display: block;
     z-index: 0;
 }
+
 .top-page .top-section-container{
     height: auto;
     position: absolute;
@@ -69,4 +70,27 @@
 .discription-image{
     height: 10vh;
     width: auto;
+}
+
+.hide{
+    display: none;
+}
+
+.login-modal{
+    z-index: 100;
+    position: fixed;
+    top: calc((100vh - 70vh) / 2);
+    left: calc((100vw - 280px) / 2);
+}
+
+.register-modal{
+    z-index: 100;
+    position: fixed;
+    top: calc((100vh - 70vh) / 2);
+    left: calc((100vw - 280px) / 2);
+}
+
+.closeModalButton{
+    text-align: right;
+    margin: 0;
 }

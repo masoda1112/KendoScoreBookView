@@ -4,9 +4,14 @@ import Image from 'next/image'
 import { Button } from '@mui/material'
 import Discription from '../components/discription'
 import Link from 'next/link'
-
+import Login from '../components/loginModal'
+import Register from '../components/registerModal'
+import React, { useState, useContext } from 'react'
+import { ModalContext } from './_app'
+import { ArtTrack } from '@material-ui/icons'
 
 const TopPage = () => {
+
   const discriptionArray = [
     {
       title : "平均的な手数",
@@ -29,14 +34,28 @@ const TopPage = () => {
       image: "HomePage.png"
     }
   ]
+
+  const value = useContext(ModalContext)
+
+  const onClickRegister =()=>{
+    value.setRegisterModalOpen(true)
+  }
+
   return (
     <>
+      
+      <div className={(value.loginModalOpen) ? "login-modal" : "hide login-modal"}>
+        <Login />
+      </div>
+      <div className={(value.registerModalOpen) ? "register-modal" : "hide register-modal"}>
+        <Register />
+      </div>
       <div className='top-page'>
         <div className='top-section'>
           <div className='top-section-container'>
             <h1 className="top-section-title">剣道を科学しよう。</h1>
-            <p className="top-section-description">スコア表に残らない、一本にはならなかった技。それらを記録することで、新たな洞察が得られるかもしれません。</p>
-            <Link href="/signup"><Button variant="contained">無料会員登録</Button></Link>
+            <p className="top-section-description">スコア表に残らない、一本にはならなかった技。それらを記録することで、新たな気づきが得られるかもしれません。</p>
+            <Button variant="contained" onClick={() => onClickRegister()}>無料登録</Button>
           </div>
         </div>
         <div className='discriptions-section'>

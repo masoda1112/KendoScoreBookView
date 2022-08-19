@@ -11,23 +11,23 @@ const Game =()=>{
     const graphData = [
         {
             index: 0,
-            name: 'データ1',
-            value: 300,
+            name: '飛面',
+            value: 30,
         },
         {
             index: 1,
-            name: 'データ2',
-            value: 200,
+            name: '出手',
+            value: 20,
         },
         {
             index: 2,
-            name: 'データ3',
-            value: 380,
+            name: '出面',
+            value: 38,
         },
         {
             index: 3,
-            name: 'データ3',
-            value: 80,
+            name: '応胴',
+            value: 12,
         }
     ]
     
