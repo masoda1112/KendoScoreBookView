@@ -86,15 +86,6 @@ const RecordGame =()=>{
                 'fouls': foulList,
                 'competitor_fouls': competitorFoulList,
             }
-
-            console.log("competitor_name", competitorName)
-            console.log("result_id", resultId)
-            console.log("time", gameTime)
-            console.log("valid_attack", validAttackList)
-            console.log("competitor_attack", competitorAttackList)
-            console.log("attack", attackList)
-            console.log("foul", foulList)
-            console.log("competitor_foul", competitorFoulList)
             
             axios.post(LOCALBASEURL + "/" + userName + "/add", data, {headers})
             .then((response) => {

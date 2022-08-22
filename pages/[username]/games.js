@@ -1,59 +1,55 @@
-import GameItem from "../../components/gameItem"
-import Search from "../../components/search"
+import React, { useState, useEffect } from 'react';
+import { useCookies } from "react-cookie"
+import { useRouter } from 'next/router'
 import Link from 'next/link'
+import axios from 'axios'
+
+// import GameItem from "../../components/gameItem"
+import Search from "../../components/search"
+import { LOCALBASEURL, getUserName } from '../../public/constants'
+import GameOverView from '../../components/gameOverView';
 
 const Games =(props)=>{
-    const testData = [
-        {
-            id: 1,
-            name: "剣士丸剣士",
-            result: "勝利",
-            date: "2022/05/12"
-        },
-        {
-            id: 2,
-            name: "宮本武蔵",
-            result: "敗北",
-            date: "2022/05/10"
-        },
-        {
-            id:3,
-            name: "佐々木小次郎",
-            result: "勝利",
-            date: "2022/05/08"
-        },
-        {
-            id:4,
-            name: "本田忠勝",
-            result: "勝利",
-            date: "2022/05/01"
-        },
-        {
-            id:5,
-            name: "前田慶次",
-            result: "勝利",
-            date: "2022/04/12"
-        },
-    ]
+    const [gameList, setGameList] = useState("")
+    const userName = getUserName()
+    const [cookies, setCookie, removeCookie] = useCookies(["access_token"])
+    const headers = {Authorization : 'Bearer ' + cookies.access_token}
+    
+    useEffect(() => {
+        getRequest()
+    },[])
+
+    const getRequest = () => {
+        axios.get(LOCALBASEURL + "/" + userName + "/games", {headers})
+        .then((response) => {
+            setGameList(response["data"]["games"])
+        })
+        .catch ((error) => {
+            console.error(error)
+        })
+    }
+
 
     return (
         <div className="games">
             {/* <div className="search-section">
                 <Search />
             </div> */}
+            <p className="games-page-title">過去の戦績</p>
             <div className="game-list-section">
-                <div className="game-list-item-container game-list-top" key={props.id}>
-                    <p className="game-list-item-id">id</p>
-                    <p className="game-list-item-name">相手の名前</p>
-                    <p className="game-list-item-result">結果</p>
-                    <p className="game-list-item-date">日付</p>
-                </div>
                 <div className="game-list-section-container">
-                    {
-                        
-                        testData.map((item, index)=>(
+                    { 
+                        (gameList == "") ? <></> :
+                        gameList.map((item, index)=>(
                             <div className="game-list-item" key={index}>
-                                <GameItem id={item.id} name={item.name} result={item.result} date={item.date}/>
+                                <GameOverView 
+                                    id={item.id} 
+                                    userName={userName}
+                                    competitorName={item.competitor_name}
+                                    competitorValidAttacks={item.competitor_valid_attack}
+                                    validAttacks={item.valid_attack}
+                                    date={item.date}
+                                />
                             </div>
                         ))
                     }

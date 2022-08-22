@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 // import CircleGraphSection from '../../components/circleGraphSection'
 import dynamic from "next/dynamic"
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useCookies } from "react-cookie"
 import axios from 'axios'
 
-import { LOCALBASEURL } from '../../public/constants'
+import { LOCALBASEURL, getUserName } from '../../public/constants'
 
 const CircleGraphSection = dynamic(() => import("../../components/circleGraphSection"), { ssr: false });
 
@@ -16,9 +16,8 @@ const CircleGraphSection = dynamic(() => import("../../components/circleGraphSec
 const Home = () => {
     // ここでapiリクエストで円グラフに使用するデータを取得し、配列に定義。
     const [resData, setResData] = useState([])
-    const router = useRouter()
     const [cookies, setCookie, removeCookie] = useCookies(["access_token"])
-    const path = router.asPath
+    const userName = getUserName()
     const headers = {Authorization : 'Bearer ' + cookies.access_token}
 
 
@@ -28,9 +27,10 @@ const Home = () => {
 
 
     const getRequest = () =>{
-        axios.get(LOCALBASEURL + "/api" + path, {headers})
+        axios.get(LOCALBASEURL + "/" + userName, {headers})
         .then((response) => {
             setResData(response["data"])
+            console.log(response["data"])
         })
         .catch ((error) => {
             console.error(error)

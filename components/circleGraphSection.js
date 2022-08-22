@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { PieChart, Pie, Cell, Text } from 'recharts'
 
 const label = ({ name, value, cx, x, y }) => {
@@ -5,7 +6,7 @@ const label = ({ name, value, cx, x, y }) => {
     return (
         <>
             <Text x={x} y={y} textAnchor={textAnchor} fill="#576874">{name}</Text>
-            <Text x={x} y={y} dominantBaseline="hanging" textAnchor={textAnchor} fill="#576874">{value + "%"}</Text>
+            <Text x={x} y={y} dominantBaseline="hanging" textAnchor={textAnchor} fill="#576874">{value + "本"}</Text>
         </>
     )
 }
@@ -15,14 +16,14 @@ const CircleGraphSection = ( props ) => {
     return (
         <div className='pie-chart-item'>
             {
-                (props.data.length == 0) ? <div><p>データがありません</p></div> :
+                (!props.data) ? <div><p>データがありません</p></div> :
                 <>
                     <h2 className='pie-chart-title'>{props.title}</h2>
-                    <PieChart width={320} height={250}>
-                        <Pie data={props.data} dataKey="value" nameKey="name" cx="50%" cy="50%" fill="#8884d8" label={label}>
+                    <PieChart width={320} height={300}>
+                        <Pie data={props.data} dataKey="value" nameKey="name" cx="50%" cy="50%" fill="#8884d8" label={label} outerRadius={50}>
                             { //円グラフの色を各領域ごとに分けるように指定
                             props.data.map((entry, index) =>
-                                <Cell fill={COLORS[index % COLORS.length]} />)
+                                <Cell fill={COLORS[index % COLORS.length]} key={index}/>)
                             }
                         </Pie>
                     </PieChart>

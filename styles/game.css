@@ -27,3 +27,13 @@
 .game-overview-vsmark{
     font-size: 30px;
 }
+
+.graph-chart-title{
+    width: 80%;
+    margin: 50px auto;
+    font-size: 18px;
+}
+
+.graph-item{
+    padding-bottom: 50px;
+}
