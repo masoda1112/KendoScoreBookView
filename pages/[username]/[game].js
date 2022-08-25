@@ -58,12 +58,33 @@ const Game =()=>{
         <div className="game">
             <div className="game-overview-section" >
                 <div className="game-overview-section-container">
-                    <GameOverView id={gameInfo.id} date={gameInfo.date} userName={userName} validAttacks={gameInfo.valid_attack_list} competitorName={gameInfo.competitor_name} competitorValidAttacks={gameInfo.competitor_valid_attack_list}/>
+                    <GameOverView 
+                        id={gameInfo.id} 
+                        date={gameInfo.date} 
+                        userName={userName} 
+                        validAttacks={gameInfo.valid_attack_list} 
+                        competitorName={gameInfo.competitor_name} 
+                        competitorValidAttacks={gameInfo.competitor_valid_attack_list}
+                    />
+                    <div className="game-overview-section-bottom">
+                        <p className="game-overview-section-time">{"試合時間: " + gameInfo.time + "秒"}</p>
+                        <p className="game-overview-section-foul">反則:
+                            {
+                            (!gameInfo.foul_list) ? <></> :
+                            gameInfo.foul_list.map((value, index)=>{
+                                return <span className="game-overview-section-foul" key={index}>{" " + userName + value + ","}</span>
+                            })
+                            }
+                            {
+                                (!gameInfo.competitor_foul_list) ? <></> :
+                                gameInfo.competitor_foul_list.map((value, index)=>{
+                                    return <span className="game-overview-section-foul" key={index}>{" " + value + "(" + gameInfo.competitor_name + ")" + ","}</span>
+                                })
+                            }
+                        </p>
+                    </div>
                 </div>
             </div>
-            {/* <div className="circle-graph-section">
-                <CircleGraphSection title="打った技の構成" data={graphDataState}/>
-            </div> */}
             <BarGraphSection title="出した技" data={graphDataState}/>
         </div>
     )

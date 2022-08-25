@@ -13,6 +13,7 @@
 .game-overview-section-container{
     width: 90%;
     margin: auto;
+    padding-bottom: 30px;
 }
 
 .game-overview-name{
@@ -36,4 +37,13 @@
 
 .graph-item{
     padding-bottom: 50px;
+}
+
+.game-overview-section-bottom{
+    width: 90%;
+    margin: auto;
+}
+
+.game-overview-section-time{
+    margin-top: 30px;
 }
