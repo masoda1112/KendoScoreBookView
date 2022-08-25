@@ -79,7 +79,7 @@ const Home = () => {
                 </div>
             </div>
             <CircleGraphSection title="打った技の構成" data={circleGraphData}/>
-            <BarGraphSection title="各技の有効打突率" data={barGraphData}/>
+            <BarGraphSection title="各技の有効打突数" data={barGraphData}/>
             <CircleGraphSection title="打たれた技の構成" data={competitorCircleGraphData}/>
         </div>
     )

@@ -14,24 +14,24 @@ const TopPage = () => {
 
   const discriptionArray = [
     {
-      title : "平均的な手数",
-      description: "1分あたりどのくらいの技を出しているのか、数値にして把握することができます。",
-      image: "HomePage.png"
+      title : "一本を取る力",
+      description: "1分あたりどのくらいの技を出しているのか、出した技はどのくらいの確率で一本になるのか数値にして把握することができます。",
+      image: "/img/attackCountImg.png"
     },
     {
       title : "有効打となる確率",
-      description: "自分が出した技の内どのくらいの技が有効打となっているのか、数値にして把握することができます。",
-      image: "HomePage.png"
+      description: "自分が出した技の内どのくらいの数が有効打となっているのか、数値にして把握することができます。",
+      image: "/img/skillValidCount.png"
     },
     {
       title : "出した技の構成比",
       description: "自分がどの技をどのくらい繰り出しているのか、円グラフで視覚的に把握できます。",
-      image: "HomePage.png"
+      image: "/img/skillRate.png"
     },
     {
       title : "打たれた技の構成比",
       description: "自分がどのような技を打たれやすいのか、円グラフで視覚的に把握できます。",
-      image: "HomePage.png"
+      image: "/img/competitorAttackRate.png"
     }
   ]
 
