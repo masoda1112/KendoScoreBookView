@@ -7,7 +7,7 @@ const RatioItem =(props)=>{
     return (
         <div className="ratio-item">
             <h3 className="ratio-title">{props.title}</h3>
-            <p className="ratio-value">{props.childCount} / {props.parentCount} <span className="ratio-unit">（{answer}{props.unit}）</span></p>
+            <p className="ratio-value">{answer}{props.unit} <span className="ratio-unit">（{props.childCount} / {props.parentCount} ）</span></p>
         </div>
     )
 }
