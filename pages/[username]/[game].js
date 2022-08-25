@@ -2,7 +2,7 @@ import GameOverView from "../../components/gameOverView"
 // import BarGraphSection from "../../components/barGraphSection"
 import React, { useState, useEffect } from 'react'
 import { useCookies } from "react-cookie"
-import { useRouter } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import dynamic from "next/dynamic"
 import Link from 'next/link'
 import axios from 'axios'
@@ -21,7 +21,8 @@ const Game =()=>{
     const headers = {Authorization : 'Bearer ' + cookies.access_token}
 
     // gameId取得
-    const path = useRouter().asPath
+    const router = useRouter()
+    const path = router.asPath
     const slicePosition = path.indexOf('/', path.indexOf('/') + 1)
     const gameId = Number(path.substring(slicePosition + 1))
 
@@ -49,6 +50,7 @@ const Game =()=>{
         })
         .catch ((error) => {
             console.error(error)
+            router.push("/")
         })
     }
 

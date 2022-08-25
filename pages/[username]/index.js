@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 // import CircleGraphSection from '../../components/circleGraphSection'
 import dynamic from "next/dynamic"
-import { useRouter } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import RatioItem from '../../components/ratioItem'
 import Link from 'next/link'
 import { useCookies } from "react-cookie"
@@ -24,6 +24,7 @@ const Home = () => {
     const [cookies, setCookie, removeCookie] = useCookies(["access_token"])
     const userName = getUserName()
     const headers = {Authorization : 'Bearer ' + cookies.access_token}
+    const router = useRouter()
 
 
     useEffect(() => {
@@ -46,6 +47,7 @@ const Home = () => {
         })
         .catch ((error) => {
             console.error(error)
+            router.push("/")
         })
     }
 

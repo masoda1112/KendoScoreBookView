@@ -94,6 +94,7 @@ const RecordGame =()=>{
             })
             .catch ((error) => {
                 console.error(error)
+                router.push("/")
             })
             setCount(0)
         }

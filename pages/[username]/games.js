@@ -14,6 +14,7 @@ const Games =(props)=>{
     const userName = getUserName()
     const [cookies, setCookie, removeCookie] = useCookies(["access_token"])
     const headers = {Authorization : 'Bearer ' + cookies.access_token}
+    const router = useRouter()
     
     useEffect(() => {
         getRequest()
@@ -26,6 +27,7 @@ const Games =(props)=>{
         })
         .catch ((error) => {
             console.error(error)
+            router.push("/")
         })
     }
 

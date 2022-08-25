@@ -19,6 +19,10 @@ a {
   box-sizing: border-box;
 }
 
+.white{
+  color: white;
+}
+
 main{
   /* width: 90%; */
   margin: auto;
@@ -57,8 +61,9 @@ main{
 }
 
 .footer{
-  height: 100px;
-  padding-top: 20px;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
@@ -66,7 +71,9 @@ main{
   width: 90%;
   margin: auto;
 }
-
+.copy-light{
+  margin-top: 30px;
+}
 .addgame{
   padding-bottom: 30px;
 }
