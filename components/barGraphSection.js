@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Text } from 'recharts';
 
 
 const label = ({ name, value, cx, x, y }) => {
