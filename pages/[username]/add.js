@@ -1,4 +1,4 @@
-import { Button , TextField, Select, MenuItem, InputLabel, FormControl, InputAdornment} from '@mui/material'
+import { Button , TextField, Select, MenuItem, InputLabel, FormControl, InputAdornment, LinearProgress} from '@mui/material'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -132,6 +132,7 @@ const RecordGame =()=>{
         <div className="addgame">
             {/* ここに進捗具合がわかるメータを入れる */}
             <div className="addgame-container">
+                <LinearProgress value={count * 20} variant="determinate"/>
                 <form>
                     <div className={(count != 0) ? "remove valid-attack-wrapper" : "valid-attack-wrapper"}>
                         <p className="modal-list-title">試合概要</p>

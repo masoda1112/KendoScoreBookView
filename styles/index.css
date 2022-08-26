@@ -29,8 +29,12 @@
     top: 40vh;
     margin: 0 20px;
     color: white;
+    max-width: 560px;
 }
 
+.top-section-description{
+    width: 100%;
+}
 .discriptions-section{
     padding-top: 40px;
     width: 100%;
